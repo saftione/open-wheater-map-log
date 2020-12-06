@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 // routes
 require("./app/routes/auth/auth.routes")(app);
 require("./app/routes/auth/user.routes")(app);
-
+require("./app/routes/weather.routes")(app);
 require("./app/routes/turorial.routes")(app);
 require("./app/routes/todo.routes")(app);
 
@@ -106,11 +106,11 @@ function loadData(oQuery) {
 }
 
 
-// setInterval(function () {
-//   console.log("saved Weather");
-//   loadWheather();
+setInterval(function () {
+  console.log("saved Weather");
+  loadWheather();
 
-// }, 1000)
+}, 900000)
 
 
 

@@ -1,10 +1,11 @@
 const db = require("../models");
-const Weathers = db.weathers;
+const Tutorial = db.tutorials;
+const Weather = db.weathers;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.data) {
+  if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
@@ -32,10 +33,10 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+  const data = req.query.data;
+  var condition = data ? { data: { $regex: new RegExp(data), $options: "i" } } : {};
 
-  Tutorial.find(condition)
+  Weather.find(condition)
     .then(data => {
       res.send(data);
     })
