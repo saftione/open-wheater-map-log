@@ -74,8 +74,6 @@ function loadWheather() {
   let lon = "14.001417";
   let lat = "50.917169";
   query = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + process.env.OpenAPiKey + "";
-  console.log(query);
-
   loadData(query);
 }
 
@@ -86,7 +84,6 @@ function loadData(oQuery) {
     "body": oQuery,
     "method": "POST"
   }).then(res => res.json()).then(oResult => {
-    console.log(oResult);
     console.log(new Date());
     const db = require("./app/models");
     const Weather = db.weathers;
@@ -108,17 +105,13 @@ function loadData(oQuery) {
 
 }
 
-setInterval(function () {
-  console.log("saved Weather");
-  loadWheather();
-}, 90000)
+
+// setInterval(function () {
+//   console.log("saved Weather");
+//   loadWheather();
+
+// }, 1000)
+
+
 
 //900000 means 15 Minutes 
-
-
-
-
-
-
-
-
