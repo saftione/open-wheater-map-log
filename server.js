@@ -109,9 +109,9 @@ function loadData(oQuery) {
 }
 
 setInterval(function () {
-  console.log("saved Wheater");
+  console.log("saved Weather");
   loadWheather();
-}, 900000)
+}, 90000)
 
 //900000 means 15 Minutes 
 
