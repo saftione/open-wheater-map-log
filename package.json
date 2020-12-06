@@ -1,0 +1,40 @@
+{
+  "name": "WeatherHub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saftione/LagerHub.git"
+  },
+  "author": "Florian Tröber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saftione/LagerHub/issues"
+  },
+  "homepage": "https://github.com/saftione/LagerHub#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "browser-serialport": "^2.1.0",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "fast-csv": "^4.3.0",
+    "json2csv": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.11",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.1",
+    "node-minify": "^3.6.0",
+    "resolve": "^1.17.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6"
+  }
+}
