@@ -13,6 +13,12 @@ import { WeatherService } from 'src/app/_services/weather.service';
 export class BoardUserComponent {
 
 
+
+
+  constructor(private tutorialService: WeatherService) {
+
+  }
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -47,30 +53,31 @@ export class BoardUserComponent {
 
   ngxData: any;
   barChartLabels: any;
-
-  constructor(private tutorialService: WeatherService) {
-
-  }
-
   barChartData = [
+    { data: [], label: '', yAxisID: '', type:''}
+  ];
+  barChartData2 = [
     { data: [], label: '', yAxisID: '', type:''}
   ];
 
   ngOnInit() {
-    this.retrieveTutorials();
+    var ort="Struppen";
+    this.retrieveTutorials(ort);
+    var ort2="Ralbitz";
+    this.retrieveTutorials2(ort2);
   }
 
-  retrieveTutorials() {
-    this.tutorialService.getAll()
+  retrieveTutorials(ort) {
+
+    this.tutorialService.getAll(ort)
       .subscribe(
 
         data => {
           console.log(data);
-          // this.ngxData = data;
-          this.ngxData = data;
           var dataTemp = [];
           var dataRain = [];
           var dataTime = [];
+
           dataTemp = data[0].temp
           dataRain = data[1].rain
           dataTime = data[2].time
@@ -87,12 +94,32 @@ export class BoardUserComponent {
         });
   }
 
+  retrieveTutorials2(ort) {
 
+    this.tutorialService.getAll(ort)
+      .subscribe(
 
+        data => {
+          console.log(data);
+          var dataTemp = [];
+          var dataRain = [];
+          var dataTime = [];
 
+          dataTemp = data[0].temp
+          dataRain = data[1].rain
+          dataTime = data[2].time
+          // console.log(ndata);
+          this.barChartData2 = [
+            { data: dataTemp , label: 'Temp', yAxisID: 'A', type: 'line'},
+            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'}
+          ];
+         this.barChartLabels = dataTime
 
-
-
+        },
+        error => {
+          console.log(error);
+        });
+  }
 
   view: any[] = [700, 300];
 

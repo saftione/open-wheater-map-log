@@ -33,8 +33,8 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const data = req.query.data;
-  var condition = data ? { data: { $regex: new RegExp(data), $options: "i" } } : {};
+  const place = req.query.place;
+  var condition = place ? { place: { $regex: new RegExp(place), $options: "i" } } : {};
 
   Weather.find(condition)
     .then(data => {

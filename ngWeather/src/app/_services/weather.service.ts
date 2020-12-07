@@ -12,8 +12,8 @@ export class WeatherService {
 
     constructor(private http: HttpClient) { }
 
-    getAll() {
-      return this.http.get(baseUrl);
+    getAll(place) {
+      return this.http.get(`${baseUrl}?place=${place}`);
     }
 
     get(id) {

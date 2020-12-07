@@ -96,8 +96,10 @@ function loadData(oQuery) {
     const db = require("./app/models");
     const Weather = db.weathers;
 
+    console.log(oResult.name);
     const weather = new Weather({
       data: oResult,
+      place: oResult.name
     });
 
     weather

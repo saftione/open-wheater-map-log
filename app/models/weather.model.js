@@ -6,6 +6,7 @@ module.exports = mongoose => {
   var schema = mongoose.Schema(
     {
       data: Array,
+      place: String,
     },
     { timestamps: true }
   );
