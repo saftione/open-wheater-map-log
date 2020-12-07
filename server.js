@@ -106,30 +106,16 @@ function loadData(oQuery) {
 }
 
 
-// setInterval(function () {
-//   console.log("saved Weather");
-//   loadWheather();
+setInterval(function () {
+  console.log("saved Weather");
+  loadWheather();
 
-// }, 3600000)
+}, 3600000)
 
 
 
 //900000 means 15 Minutes 
 
-
-
-var oldObj = {
-  987: "sqa",
-  988: "Squad"
-}
-
-var newArray = [];
-
-for (let k in oldObj) {
-  newArray.push({'id': k, 'value': oldObj[k]});
-}
-
-console.log(newArray);
 
 
 var test = {
@@ -186,8 +172,3 @@ var test = {
 
 var newtest = [];
 
-for (let k in test.data) {
-  newtest.push({'id': test.id, 'lfid':k, 'temp': test.data[0].main.temp});
-}
-
-console.log(newtest);
