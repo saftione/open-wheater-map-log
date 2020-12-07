@@ -106,12 +106,88 @@ function loadData(oQuery) {
 }
 
 
-setInterval(function () {
-  console.log("saved Weather");
-  loadWheather();
+// setInterval(function () {
+//   console.log("saved Weather");
+//   loadWheather();
 
-}, 900000)
+// }, 3600000)
 
 
 
 //900000 means 15 Minutes 
+
+
+
+var oldObj = {
+  987: "sqa",
+  988: "Squad"
+}
+
+var newArray = [];
+
+for (let k in oldObj) {
+  newArray.push({'id': k, 'value': oldObj[k]});
+}
+
+console.log(newArray);
+
+
+var test = {
+  "data": [
+      {
+          "coord": {
+              "lon": 14,
+              "lat": 50.92
+          },
+          "weather": [
+              {
+                  "id": 804,
+                  "main": "Clouds",
+                  "description": "overcast clouds",
+                  "icon": "04n"
+              }
+          ],
+          "base": "stations",
+          "main": {
+              "temp": 10.94,
+              "feels_like": 10.07,
+              "temp_min": 10,
+              "temp_max": 11.67,
+              "pressure": 997,
+              "humidity": 80
+          },
+          "visibility": 10000,
+          "wind": {
+              "speed": 0.45,
+              "deg": 103,
+              "gust": 2.68
+          },
+          "clouds": {
+              "all": 100
+          },
+          "dt": 1607267213,
+          "sys": {
+              "type": 3,
+              "id": 2008644,
+              "country": "DE",
+              "sunrise": 1607237502,
+              "sunset": 1607266739
+          },
+          "timezone": 3600,
+          "id": 6548703,
+          "name": "Struppen",
+          "cod": 200
+      }
+  ],
+  "createdAt": "2020-12-06T15:06:52.878Z",
+  "updatedAt": "2020-12-06T15:06:52.878Z",
+  "id": "5fccf38c315974554cc9f398"
+}
+
+var newtest = [];
+
+for (let k in test.data) {
+  newtest.push({'id': test.id, 'lfid':k, 'temp': test.data[0].main.temp});
+}
+
+console.log(newtest);
