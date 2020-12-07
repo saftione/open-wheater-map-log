@@ -78,13 +78,11 @@ function loadWheather() {
 }
 
 function loadWheatherC() {
-  let lon = "14.276035";
-  let lat = "51.286799";
+  let lon = "14.001417";
+  let lat = "50.917169";
   query = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + process.env.OpenAPiKey + "";
   loadData(query);
 }
-
-
 
 function loadData(oQuery) {
 
@@ -103,7 +101,7 @@ function loadData(oQuery) {
     weather
       .save(weather)
       .catch(err => {
-       console.log(err);
+        console.log(err);
       });
 
   }).catch(e => {
@@ -117,7 +115,6 @@ function loadData(oQuery) {
 setInterval(function () {
   console.log("saved Weather");
   loadWheather();
-  loadWheatherC();
 
 }, 3600000)
 
@@ -129,50 +126,50 @@ setInterval(function () {
 
 var test = {
   "data": [
-      {
-          "coord": {
-              "lon": 14,
-              "lat": 50.92
-          },
-          "weather": [
-              {
-                  "id": 804,
-                  "main": "Clouds",
-                  "description": "overcast clouds",
-                  "icon": "04n"
-              }
-          ],
-          "base": "stations",
-          "main": {
-              "temp": 10.94,
-              "feels_like": 10.07,
-              "temp_min": 10,
-              "temp_max": 11.67,
-              "pressure": 997,
-              "humidity": 80
-          },
-          "visibility": 10000,
-          "wind": {
-              "speed": 0.45,
-              "deg": 103,
-              "gust": 2.68
-          },
-          "clouds": {
-              "all": 100
-          },
-          "dt": 1607267213,
-          "sys": {
-              "type": 3,
-              "id": 2008644,
-              "country": "DE",
-              "sunrise": 1607237502,
-              "sunset": 1607266739
-          },
-          "timezone": 3600,
-          "id": 6548703,
-          "name": "Struppen",
-          "cod": 200
-      }
+    {
+      "coord": {
+        "lon": 14,
+        "lat": 50.92
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "overcast clouds",
+          "icon": "04n"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 10.94,
+        "feels_like": 10.07,
+        "temp_min": 10,
+        "temp_max": 11.67,
+        "pressure": 997,
+        "humidity": 80
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 0.45,
+        "deg": 103,
+        "gust": 2.68
+      },
+      "clouds": {
+        "all": 100
+      },
+      "dt": 1607267213,
+      "sys": {
+        "type": 3,
+        "id": 2008644,
+        "country": "DE",
+        "sunrise": 1607237502,
+        "sunset": 1607266739
+      },
+      "timezone": 3600,
+      "id": 6548703,
+      "name": "Struppen",
+      "cod": 200
+    }
   ],
   "createdAt": "2020-12-06T15:06:52.878Z",
   "updatedAt": "2020-12-06T15:06:52.878Z",

@@ -1,0 +1,93 @@
+{
+  "configVersion": 1,
+  "timestamp": 1607344575285,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/index.html",
+        "/main.a5674c1cf3a60f9eef40.js",
+        "/manifest.webmanifest",
+        "/polyfills.ff5a9919bdde3de63cac.js",
+        "/runtime.359d5ee4682f20e936e9.js",
+        "/styles.aa0684b4b12916173853.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/biene.png",
+        "/assets/biene2.png",
+        "/assets/favicon.ico",
+        "/assets/hintergrund4.png",
+        "/assets/icons/biene128.png",
+        "/assets/icons/biene144.png",
+        "/assets/icons/biene152.png",
+        "/assets/icons/biene192.png",
+        "/assets/icons/biene384.png",
+        "/assets/icons/biene512.png",
+        "/assets/icons/biene72.png",
+        "/assets/icons/biene96.png",
+        "/assets/pedigree.png",
+        "/assets/pwa.jpeg",
+        "/assets/tree.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/biene.png": "8dae62896f63fd16a9dc2848fdf5d22729b6b1a5",
+    "/assets/biene2.png": "ed72c8b0c1cd619d019d97c6d0ea3628a6565111",
+    "/assets/favicon.ico": "c843c8118c69c79feb64cb3e9e89ffa7242f8c0e",
+    "/assets/hintergrund4.png": "a4427062c48aaa12cd708ba2c455eac814e5f03b",
+    "/assets/icons/biene128.png": "f00458d6797fb8f39f46dd3981c769ccd5e5af5a",
+    "/assets/icons/biene144.png": "5122166e59c5e2a5dc368e3774e4c353adb4b7d7",
+    "/assets/icons/biene152.png": "d3f917c4b0e150890730c2d23c26c461ca4b169c",
+    "/assets/icons/biene192.png": "b178f612925b93103465f78690e3d2f9776b8d11",
+    "/assets/icons/biene384.png": "45cb3c99aced443bcb99790f1a934efa95582d51",
+    "/assets/icons/biene512.png": "5a8732e3e5b4acdc3325cb78706b3b706fa387d7",
+    "/assets/icons/biene72.png": "bae0c7f545bd76d6f7b6a2da659b013659b21387",
+    "/assets/icons/biene96.png": "ca29224c655efecf4eebcf0a5d54153689f1907b",
+    "/assets/pedigree.png": "865d7a7aa5b486c911ae762523e8a2f727e7a67c",
+    "/assets/pwa.jpeg": "2052e3bc32b4b948f6db2e91f4227137a71ccfbf",
+    "/assets/tree.png": "80c001ac0fcac861faaa50ef6fe8fda91bdfe9f1",
+    "/index.html": "a35d58bb85576729a2bfb4ad3f8524af3b2150ff",
+    "/main.a5674c1cf3a60f9eef40.js": "45c8f160da098682cde7987e1784b319e0a688a7",
+    "/manifest.webmanifest": "f2adafc1f166aee2179826dd95863aae5e7d1140",
+    "/polyfills.ff5a9919bdde3de63cac.js": "0d003992512d28c544b0a972ce2ae6b28ebbf5f6",
+    "/runtime.359d5ee4682f20e936e9.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.aa0684b4b12916173853.css": "1e95a683ad7a3a79c269721922fbaa20275a3662"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
