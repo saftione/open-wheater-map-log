@@ -179,5 +179,4 @@ var test = {
   "id": "5fccf38c315974554cc9f398"
 }
 
-var newtest = [];
 
