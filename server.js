@@ -150,13 +150,13 @@ function loadData(oQuery,oQuerySoil) {
 
 
 }
- loadWheatherSt();
- loadWheatherCa();
+//  loadWheatherSt();
+//  loadWheatherCa();
 
 
 setInterval(function () {
   console.log("saved Weather");
-  loadWheatherST();
+  loadWheatherSt();
   loadWheatherCa();
 
 }, 3600000)
