@@ -114,7 +114,8 @@ function loadData(oQuery) {
 
 
 }
-
+loadWheather();
+loadWheatherC();
 
 setInterval(function () {
   console.log("saved Weather");
