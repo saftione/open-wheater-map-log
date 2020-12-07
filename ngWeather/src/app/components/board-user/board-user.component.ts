@@ -77,14 +77,20 @@ export class BoardUserComponent {
           var dataTemp = [];
           var dataRain = [];
           var dataTime = [];
+          var dataT0 = [];
+          var dataMoisture = [];
 
           dataTemp = data[0].temp
           dataRain = data[1].rain
           dataTime = data[2].time
+          dataMoisture = data[3].moisture
+          dataT0 = data[4].t0
           // console.log(ndata);
           this.barChartData = [
             { data: dataTemp , label: 'Temp', yAxisID: 'A', type: 'line'},
-            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'}
+            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'},
+            { data: dataMoisture , label: 'Moisture', yAxisID: 'A', type: 'line'},
+            { data: dataT0 , label: 'Bodentemperatur', yAxisID: 'A', type: 'line'}
           ];
          this.barChartLabels = dataTime
 
@@ -94,9 +100,9 @@ export class BoardUserComponent {
         });
   }
 
-  retrieveTutorials2(ort) {
+  retrieveTutorials2(ort2) {
 
-    this.tutorialService.getAll(ort)
+    this.tutorialService.getAll(ort2)
       .subscribe(
 
         data => {
@@ -104,14 +110,20 @@ export class BoardUserComponent {
           var dataTemp = [];
           var dataRain = [];
           var dataTime = [];
+          var dataT0 = [];
+          var dataMoisture = [];
 
           dataTemp = data[0].temp
           dataRain = data[1].rain
           dataTime = data[2].time
+          dataMoisture = data[3].moisture
+          dataT0 = data[4].t0
           // console.log(ndata);
           this.barChartData2 = [
             { data: dataTemp , label: 'Temp', yAxisID: 'A', type: 'line'},
-            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'}
+            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'},
+            { data: dataMoisture , label: 'Moisture', yAxisID: 'A', type: 'line'},
+            { data: dataT0 , label: 'Bodentemperatur', yAxisID: 'A', type: 'line'}
           ];
          this.barChartLabels = dataTime
 

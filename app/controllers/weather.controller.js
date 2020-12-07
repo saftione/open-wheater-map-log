@@ -38,12 +38,9 @@ exports.findAll = (req, res) => {
 
   Weather.find(condition)
     .then(data => {
-      //  console.log(data);
-      var newtest = []; var dataTemp = []; var dataTime = []; var dataRain = [];
-      var newdata = []
-      for (let k in data) {
-        newtest.push({ 'id': data[k].id, "date": data[k].createdAt, 'name': k, 'value': data[k].data[0].main.temp });
-      }
+      //console.log(data);
+      var datat0 = []; var dataTemp = []; var dataTime = []; var dataRain = []; var newdata = []; var dataMoisture = [];
+      //console.log(data)
       // newdata.push({ 'series': newtest, "name":'temp'});
       // console.log(newdata)
       rainnull = {
@@ -52,20 +49,26 @@ exports.findAll = (req, res) => {
       var rain;
 
       for (let k in data) {
-        dataTemp.push(data[k].data[0].main.temp);
-        if (data[k].data[0].rain == null) {
-         rain=rainnull;
+
+        dataTemp.push(data[k].dataAir[0].main.temp);
+        if (data[k].dataAir[0].rain == null) {
+          rain = rainnull;
         } else {
-          rain=data[k].data[0].rain;
+          rain = data[k].dataAir[0].rain;
         }
         dataRain.push(rain["1h"]);
+        dataMoisture.push(data[k].dataSoil[0].moisture);
+        datat0.push(data[k].dataSoil[0].t0);
         dataTime.push(data[k].createdAt);
+
       }
 
 
       newdata.push({ 'temp': dataTemp });
       newdata.push({ 'rain': dataRain });
       newdata.push({ 'time': dataTime });
+      newdata.push({ 'moisture': dataMoisture });
+      newdata.push({ 't0': datat0 });
       // console.log(newtest2)
       res.send(newdata);
     })
