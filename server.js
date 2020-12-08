@@ -48,6 +48,8 @@ db.mongoose
     process.exit();
   });
 
+  
+
 /* simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Lagerhub application." });
@@ -124,6 +126,14 @@ function loadData(oQuery,oQuerySoil) {
       const db = require("./app/models");
       const Weather = db.weathers;
 
+      NewAir = {
+        "main": Air.main,
+        "visibility": Air.visibility,
+        "wind": Air.wind,
+        "clouds": Air.clouds,
+        "rain": Air.rain,
+        "snow": Air.snow,
+      }
       NewSoil = {
         "dt": Soil.dt,
         "t10": Soil.t10-273.15,
@@ -131,11 +141,13 @@ function loadData(oQuery,oQuerySoil) {
         "t0": Soil.t0-273.15
       }
 
+
       const weather = new Weather({
         place: Air.name,
-        dataAir: Air,
+        dataAir: NewAir,
         dataSoil: NewSoil
       });
+      
       
       weather
         .save(weather)
