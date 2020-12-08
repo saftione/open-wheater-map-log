@@ -133,6 +133,7 @@ function loadData(oQuery,oQuerySoil) {
         "clouds": Air.clouds,
         "rain": Air.rain,
         "snow": Air.snow,
+        "dt": Air.dt,
       }
       NewSoil = {
         "dt": Soil.dt,
