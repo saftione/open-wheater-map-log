@@ -47,7 +47,7 @@ exports.findAll = (req, res) => {
         "1h": 0
       }
       var rain;
-
+      var dataslice
       for (let k in data) {
 
         dataTemp.push(data[k].dataAir[0].main.temp);
@@ -58,8 +58,11 @@ exports.findAll = (req, res) => {
         }
         dataRain.push(rain["1h"]);
         dataMoisture.push(data[k].dataSoil[0].moisture);
+
         datat0.push(data[k].dataSoil[0].t0);
-        dataTime.push(data[k].createdAt);
+        dataslice=JSON.stringify(data[k].createdAt);
+
+        dataTime.push(dataslice.slice(6, 17));
 
       }
 

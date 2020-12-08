@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { WeatherService } from 'src/app/_services/weather.service';
+import { Label, Color } from 'ng2-charts';
 
 
 
@@ -28,7 +29,8 @@ export class BoardUserComponent {
         position: 'left',
         type: 'linear',
         ticks: {
-          beginAtZero:true
+          beginAtZero: true,
+
         },
         scaleLabel: {
           display: true,
@@ -40,30 +42,55 @@ export class BoardUserComponent {
         position: 'right',
         type: 'linear',
         ticks: {
-          beginAtZero:true,
+          beginAtZero: true,
+        },
+        scaleLabel: {
+          display: true,
           labelString: 'Rain [mm]'
         }
+      },
+      {
+        id: "C",
+        position: 'left',
+        type: 'linear',
+        ticks: {
+          beginAtZero: true,
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Moisture m3/m3'
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          fontSize: 10
+        }
       }]
+    },
+    legend: {
+      labels: {
+      }
     }
   };
 
   public barChartType = 'line';
   public barChartLegend = true;
-
+  public chartColors: Color[] = [
+  ];
 
   ngxData: any;
   barChartLabels: any;
   barChartData = [
-    { data: [], label: '', yAxisID: '', type:''}
+    { data: [], label: '', yAxisID: '', type: '' }
   ];
   barChartData2 = [
-    { data: [], label: '', yAxisID: '', type:''}
+    { data: [], label: '', yAxisID: '', type: '' }
   ];
 
   ngOnInit() {
-    var ort="Struppen";
+    var ort = "Struppen";
     this.retrieveTutorials(ort);
-    var ort2="Ralbitz";
+    var ort2 = "Ralbitz";
     this.retrieveTutorials2(ort2);
   }
 
@@ -87,12 +114,12 @@ export class BoardUserComponent {
           dataT0 = data[4].t0
           // console.log(ndata);
           this.barChartData = [
-            { data: dataTemp , label: 'Temp', yAxisID: 'A', type: 'line'},
-            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'},
-            { data: dataMoisture , label: 'Moisture', yAxisID: 'A', type: 'line'},
-            { data: dataT0 , label: 'Bodentemperatur', yAxisID: 'A', type: 'line'}
+            { data: dataTemp, label: 'Temp', yAxisID: 'A', type: 'line' },
+            { data: dataRain, label: 'Rain', yAxisID: 'B', type: 'bar' },
+            { data: dataMoisture, label: 'Moisture', yAxisID: 'C', type: 'line' },
+            { data: dataT0, label: 'Bodentemperatur', yAxisID: 'A', type: 'line' }
           ];
-         this.barChartLabels = dataTime
+          this.barChartLabels = dataTime
 
         },
         error => {
@@ -120,12 +147,12 @@ export class BoardUserComponent {
           dataT0 = data[4].t0
           // console.log(ndata);
           this.barChartData2 = [
-            { data: dataTemp , label: 'Temp', yAxisID: 'A', type: 'line'},
-            { data: dataRain , label: 'Rain', yAxisID: 'B', type: 'bar'},
-            { data: dataMoisture , label: 'Moisture', yAxisID: 'A', type: 'line'},
-            { data: dataT0 , label: 'Bodentemperatur', yAxisID: 'A', type: 'line'}
+            { data: dataTemp, label: 'Temp', yAxisID: 'A', type: 'line' },
+            { data: dataRain, label: 'Rain', yAxisID: 'B', type: 'bar' },
+            { data: dataMoisture, label: 'Moisture', yAxisID: 'C', type: 'line' },
+            { data: dataT0, label: 'Temp Soil', yAxisID: 'A', type: 'line' }
           ];
-         this.barChartLabels = dataTime
+          this.barChartLabels = dataTime
 
         },
         error => {
@@ -133,7 +160,7 @@ export class BoardUserComponent {
         });
   }
 
-  view: any[] = [700, 300];
+  view: any[] = [500, 300];
 
   // options
   legend: boolean = true;
@@ -143,8 +170,6 @@ export class BoardUserComponent {
   yAxis: boolean = true;
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Year';
-  yAxisLabel: string = 'Population';
   timeline: boolean = true;
 
   colorScheme = {
