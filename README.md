@@ -1,10 +1,10 @@
 # open-wheather-map-log
 # WeatherLog
 
-# Progressive Web App
-  # Demo-App
+Progressive Web App
 
 This project uses the following data sources and technologies to log the weather and soil data.
+I have set up this logger to record the weather data of my field test sites
 
   * [Angular 11](https://angular.io/)
   * [Express]
