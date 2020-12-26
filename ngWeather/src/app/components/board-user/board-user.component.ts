@@ -50,6 +50,18 @@ export class BoardUserComponent {
         }
       },
       {
+        id: "D",
+        position: 'right',
+        type: 'linear',
+        ticks: {
+          beginAtZero: true,
+        },
+        scaleLabel: {
+          display: true,
+          labelString: 'Snow [mm]'
+        }
+      },
+      {
         id: "C",
         position: 'left',
         type: 'linear',
@@ -103,21 +115,24 @@ export class BoardUserComponent {
           console.log(data);
           var dataTemp = [];
           var dataRain = [];
+          var dataSnow = [];
           var dataTime = [];
           var dataT0 = [];
           var dataMoisture = [];
 
           dataTemp = data[0].temp
           dataRain = data[1].rain
-          dataTime = data[2].time
-          dataMoisture = data[3].moisture
-          dataT0 = data[4].t0
+          dataSnow = data[2].snow
+          dataTime = data[3].time
+          dataMoisture = data[4].moisture
+          dataT0 = data[5].t0
           // console.log(ndata);
           this.barChartData = [
             { data: dataTemp, label: 'Temp', yAxisID: 'A', type: 'line' },
             { data: dataRain, label: 'Rain', yAxisID: 'B', type: 'bar' },
+            { data: dataT0, label: 'Bodentemperatur', yAxisID: 'A', type: 'line' },
             { data: dataMoisture, label: 'Moisture', yAxisID: 'C', type: 'line' },
-            { data: dataT0, label: 'Bodentemperatur', yAxisID: 'A', type: 'line' }
+            { data: dataSnow, label: 'Snow', yAxisID: 'D', type: 'bar' },
           ];
           this.barChartLabels = dataTime
 
@@ -136,21 +151,24 @@ export class BoardUserComponent {
           console.log(data);
           var dataTemp = [];
           var dataRain = [];
+          var dataSnow = [];
           var dataTime = [];
           var dataT0 = [];
           var dataMoisture = [];
 
           dataTemp = data[0].temp
           dataRain = data[1].rain
-          dataTime = data[2].time
-          dataMoisture = data[3].moisture
-          dataT0 = data[4].t0
+          dataSnow = data[2].snow
+          dataTime = data[3].time
+          dataMoisture = data[4].moisture
+          dataT0 = data[5].t0
           // console.log(ndata);
           this.barChartData2 = [
             { data: dataTemp, label: 'Temp', yAxisID: 'A', type: 'line' },
             { data: dataRain, label: 'Rain', yAxisID: 'B', type: 'bar' },
+            { data: dataT0, label: 'Bodentemperatur', yAxisID: 'A', type: 'line' },
             { data: dataMoisture, label: 'Moisture', yAxisID: 'C', type: 'line' },
-            { data: dataT0, label: 'Temp Soil', yAxisID: 'A', type: 'line' }
+            { data: dataSnow, label: 'Snow', yAxisID: 'D', type: 'bar' },
           ];
           this.barChartLabels = dataTime
 

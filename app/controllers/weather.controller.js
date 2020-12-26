@@ -39,11 +39,14 @@ exports.findAll = (req, res) => {
   Weather.find(condition)
     .then(data => {
       //console.log(data);
-      var datat0 = []; var dataTemp = []; var dataTime = []; var dataRain = []; var newdata = []; var dataMoisture = [];
+      var datat0 = []; var dataTemp = []; var dataTime = []; var dataRain = [];  var dataSnow = []; var newdata = []; var dataMoisture = [];
       //console.log(data)
       // newdata.push({ 'series': newtest, "name":'temp'});
       // console.log(newdata)
       rainnull = {
+        "1h": 0
+      }
+      snownull = {
         "1h": 0
       }
       var rain;
@@ -57,6 +60,13 @@ exports.findAll = (req, res) => {
           rain = data[k].dataAir[0].rain;
         }
         dataRain.push(rain["1h"]);
+
+        if (data[k].dataAir[0].snow == null) {
+          snow = snownull;
+        } else {
+          snow = data[k].dataAir[0].snow;
+        }
+        dataSnow.push(snow["1h"]);
         dataMoisture.push(data[k].dataSoil[0].moisture);
 
         datat0.push(data[k].dataSoil[0].t0);
@@ -69,6 +79,7 @@ exports.findAll = (req, res) => {
 
       newdata.push({ 'temp': dataTemp });
       newdata.push({ 'rain': dataRain });
+      newdata.push({ 'snow': dataSnow });
       newdata.push({ 'time': dataTime });
       newdata.push({ 'moisture': dataMoisture });
       newdata.push({ 't0': datat0 });
