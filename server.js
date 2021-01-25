@@ -134,13 +134,13 @@ function loadData(oQuery,oQuerySoil) {
         "rain": Air.rain,
         "snow": Air.snow,
         "dt": Air.dt,
-      }
+      };
       NewSoil = {
         "dt": Soil.dt,
         "t10": Soil.t10-273.15,
         "moisture": Soil.moisture,
         "t0": Soil.t0-273.15
-      }
+      };
 
 
       const weather = new Weather({
