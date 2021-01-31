@@ -172,7 +172,7 @@ setInterval(function () {
   loadWheatherSt();
   loadWheatherCa();
 
-}, 3600000)
+}, 36000)
 
 //  function saveData(oResult,oResultSoil){
 //   
